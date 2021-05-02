@@ -1,6 +1,6 @@
 # Cadastro de Pessoas
 
-O teste foi desenvolvido utilizando as seguintes tecnologias:
+O projeto foi desenvolvido utilizando as seguintes tecnologias:
 - **.Net 5**
 - **Angular 11**
 - **MariaDB**
