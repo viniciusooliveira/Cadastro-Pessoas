@@ -2,7 +2,7 @@
 using Domain.Models.Bases;
 using FluentValidation;
 
-namespace Domain.Business.Contracts
+namespace Domain.Business.Contracts.Bases
 {
     public interface IBaseValidationBusiness<TModel, TRepository> : IBaseBusiness<TModel, TRepository>
         where TModel : Identifiable

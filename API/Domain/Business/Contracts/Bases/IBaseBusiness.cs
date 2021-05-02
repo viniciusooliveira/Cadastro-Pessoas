@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Domain.Models.Bases;
 using FluentValidation;
 
-namespace Domain.Business.Contracts
+namespace Domain.Business.Contracts.Bases
 {
     public interface IBaseBusiness<TModel, TRepository>
         where TModel : Identifiable

@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-12">
+    <h3>Lista de Pessoas</h3>
+
+    <table class="table table-bordered table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>CPF</th>
+          <th>Email</th>
+          <th>Data de Nascimento</th>
+          <th>Celular</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let person of persons">
+          <td>{{ person.name }}</td>
+          <td>{{ person.document | mask:'000.000.000-00'}}</td>
+          <td>{{ person.email }}</td>
+          <td>{{ person.birthDate | date:'dd/MM/yyyy' }}</td>
+          <td>{{ person.phoneNumber | mask: '(00) 0 0000-0000' }}</td>
+          <td>
+            <div class="btn-group" role="group" aria-label="Ações">
+              <a routerLink="/person/{{person.id}}" class="btn btn-outline-primary" title="Editar"><fa-icon [icon]="icons.faEdit"></fa-icon></a>
+              <button type="button" class="btn btn-outline-danger" (click)="deletePerson(person.id)" ><fa-icon [icon]="icons.faTrash"></fa-icon></button>
+            </div>
+          </td>
+        </tr>
+      <tr *ngIf="persons == null || persons.length == 0">
+        <td colspan="6" class="text-center">Não existem pessoas cadastradas. Clique <b><a routerLink="/person/new">aqui</a></b> para adicionar.</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

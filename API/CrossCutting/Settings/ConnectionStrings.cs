@@ -2,6 +2,6 @@
 {
     public class ConnectionStrings
     {
-        
+        public string WebpicConnection { get; set; }
     }
 }

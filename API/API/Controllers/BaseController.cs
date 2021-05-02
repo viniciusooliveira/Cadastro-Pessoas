@@ -1,6 +1,8 @@
-﻿namespace API.Controllers
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace API.Controllers
 {
-    public class BaseController
+    public class BaseController : ControllerBase
     {
         
     }

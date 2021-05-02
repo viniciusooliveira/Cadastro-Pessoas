@@ -1,0 +1,43 @@
+version: '3.7'
+
+services:
+
+  mariadb:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: webpic
+      MYSQL_DATABASE: webpic
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 10s
+      retries: 10
+    networks:
+      - backend
+
+  api:
+    image: ${DOCKER_REGISTRY-}api
+    build:
+      context: ../API
+      dockerfile: ../Docker/api.dockerfile
+    depends_on: 
+      mariadb:
+        condition: service_healthy
+    ports:
+      - "5000:5000"
+    networks:
+      - backend
+  ui:
+    image: ${DOCKER_REGISTRY-}ui
+    build:
+      context: ../UI
+      dockerfile: ../Docker/ui.dockerfile
+    depends_on: 
+      - api
+    ports:
+      - "4200:80"
+    networks:
+        - backend
+
+networks:
+  backend:
+    driver: bridge
