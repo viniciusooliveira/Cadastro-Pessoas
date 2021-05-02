@@ -10,7 +10,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 Após clonar o repositório, você poderá executar o projeto através destes dois métodos:
 
 ## Utilizando o docker-compose
-- Execute o comando `docker-compose up -d` na pasta raiz da solução
+- Execute o comando `docker-compose up -d` estando na pasta "Docker"
 - Acesse `http://localhost:4200` pelo navegador de sua preferência
 
 ## Utilizando Visual Studio / VS Code
